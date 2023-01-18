@@ -1,0 +1,12 @@
+<header th:fragment="menu">
+	<h2>STUDENT LIST</h2>
+	<ul class="menu">
+		<li><a th:href="@{/students}" th:classappend="${requestUri == '/students' ? 'active' : ''}">List all students</a></li>
+		<li><a th:href="@{/students/add}" th:classappend="${requestUri == '/students/add' ? 'active' : ''}">Add new student</a></li>
+	</ul>
+</header>
+
+<footer th:fragment="footer">
+	<p>Demo Spring Boot Web © 2023</p>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/LKS_NEXT-02.png/1030px-LKS_NEXT-02.png" alt="LKS logo">
+</footer>

@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    font-family: century-gothic, sans-serif;
+}
+
+body {
+	margin: 0;
+}
+
+.container {
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+}
+
+.container h2 {
+	width: 100%;
+	font-size: 3rem;
+	text-align: center;
+	color: white;
+	background-color: #fa5900;
+	font-weight: bold;
+	margin: 0;
+	padding: 5px 0;
+}
+
+.container section {
+	width: 100%;
+	min-height: 75vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 40px 0px;
+}
+
+.container table {
+	width: 60%;
+	align-self: center;
+	border-spacing: 0;
+}
+
+.container th {
+	padding: 5px;
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 2px solid black;
+}
+
+.container td {
+	padding: 10px 5px;
+	text-align: center;
+}
+
+.actions {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+.actions i {
+	font-size: 1.5rem;
+	color: #fa5900;
+	transition: all .1s;
+}
+
+.actions i:hover {
+	transform: scale(1.2);
+}
+
+.container h3 {
+	text-align: center;
+	font-style: italic;
+	color: #bfbfbf;
+	margin-bottom: 15px;
+}
+
+.error_message {
+	padding-top: 10px;
+	font-weight: bold;
+	color: red;
+	font-style: italic;
+}
+
+.inputs_row {
+	width: 33%;
+}
+
+.submit {
+	padding: 5px 10px;
+	margin-top: 20px;
+	background-color: white;
+	color: #fa5900;
+	border: 2px solid #fa5900;
+	font-weight: bold;
+	border-radius: 5px;
+	transition: all .1s;
+}
+
+.submit:hover {
+	background-color: #fa5900;
+	color: white;
+}
+
+header {
+	min-height: 15vh;
+}
+
+.menu {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.menu li {
+	list-style: none;
+}
+
+.menu a {
+	width: 100%;
+	padding: 10px 20px;
+	text-decoration: none;
+	font-size: 1.3rem;
+	list-style: none;
+	color: #fa5900;
+	transition: all .2s;
+}
+
+.menu a:hover {
+	color: white;
+	background-color: #fa5900;
+	cursor: pointer;
+}
+
+.active {
+	color: white!important;
+	background-color: #fa5900;
+}
+
+footer {
+	width: 100%;
+	min-height: 10vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+	background-color: #fa5900;
+}
+
+footer p {
+	font-size: 1.5rem;
+	color: white;
+}
+
+footer img {
+	width: 100px;
+}
+
+.result_rows {
+	background-color: white;
+	transition: all .1s;
+}
+
+.result_rows:hover {
+	background-color: #bfbfbf;
+}
+
+
+
+
+

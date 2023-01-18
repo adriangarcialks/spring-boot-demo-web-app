@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Students</title>
+
+<link th:href="@{/css/estilos.css}" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
+</head>
+<body>
+	
+	<div class="container">
+		<header th:replace="general.html :: menu"></header>
+		<section>
+			<h3>List of students</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Date of birth</th>
+						<th>Age</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="student:${students}" class="result_rows">
+						<td th:text="${student.name}"></td>
+						<td th:text="${student.email}"></td>
+						<td th:text="${student.dob}"></td>
+						<td th:text="${student.age}"></td>
+						<td class="actions"><a th:href="@{/students/delete/{id}(id=${student.id})}"><i class="fa-solid fa-trash"></i></a><a th:href="@{/students/update/{id}(id=${student.id})}"><i class="fa-solid fa-pen"></i></a></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<footer th:replace="general.html :: footer"></footer>
+	</div>
+
+</body>
+</html>

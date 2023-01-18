@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Upadate student</title>
+
+<link th:href="@{/css/estilos.css}" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
+</head>
+<body>
+	
+	<div class="container">
+		<header th:replace="general.html :: menu"></header>
+		<section>
+			<h3>Update student</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<form action="#" th:action="@{/students/update/{id} (id=${student.id})}" th:object="${student}" method="POST">
+						<tr>
+							<td><input type="text" id="name" th:field="*{name}"></td>
+							<td><input type="text" id="email" th:field="*{email}"></td>
+						</tr>
+						<tr class="submit_row">
+							<td colspan="2"><input type="submit" value="SAVE" class="submit"></td>
+						</tr>
+					</form>
+					<tr>
+						<td class="error_message" colspan="2" th:text="${errorMessage}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<footer th:replace="general.html :: footer"></footer>
+	</div>
+
+</body>
+</html>
