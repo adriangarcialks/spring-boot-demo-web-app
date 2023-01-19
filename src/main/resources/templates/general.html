@@ -1,8 +1,11 @@
 <header th:fragment="menu">
-	<h2>STUDENT LIST</h2>
+	<div class="main_header">
+		<h2>STUDENT LIST</h2>
+		<a th:href="@{/logout}"><i class="fa-solid fa-right-from-bracket"></i></a>
+	</div>
 	<ul class="menu">
 		<li><a th:href="@{/students}" th:classappend="${requestUri == '/students' ? 'active' : ''}">List all students</a></li>
-		<li><a th:href="@{/students/add}" th:classappend="${requestUri == '/students/add' ? 'active' : ''}">Add new student</a></li>
+		<li><a th:href="@{/students/add}" sec:authorize="hasRole('ROLE_ADMIN')">Add new student</a></li>
 	</ul>
 </header>
 

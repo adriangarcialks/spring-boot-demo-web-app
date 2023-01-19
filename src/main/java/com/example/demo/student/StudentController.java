@@ -21,6 +21,11 @@ public class StudentController {
 	public StudentController(StudentService studentService) {
 		this.studentService = studentService;
 	}
+	
+	@GetMapping("/")
+	public String getStudents() {
+		return "redirect:/students";
+	}
 
 	@GetMapping("/students")
 	public String getStudents(Model model, HttpServletRequest request) {

@@ -17,15 +17,33 @@ body {
 	align-content: center;
 }
 
-.container h2 {
+.main_header {
+	width: 100%;
+	background-color: #fa5900;
+}
+
+.main_header h2 {
 	width: 100%;
 	font-size: 3rem;
 	text-align: center;
 	color: white;
-	background-color: #fa5900;
 	font-weight: bold;
 	margin: 0;
 	padding: 5px 0;
+	position: relative
+}
+
+.main_header i {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 2rem;
+	color: white;
+}
+
+.main_header i {
+	text-decoration: none;
+	color: white;
 }
 
 .container section {
@@ -153,12 +171,11 @@ footer {
 }
 
 footer p {
-	font-size: 1.5rem;
 	color: white;
 }
 
 footer img {
-	width: 100px;
+	width: 70px;
 }
 
 .result_rows {
