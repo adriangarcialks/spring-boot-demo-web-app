@@ -24,7 +24,6 @@ public class SecurityConfiguration {
 	@Bean
 	@Autowired
 	protected InMemoryUserDetailsManager configureAuthentication(BCryptPasswordEncoder encoder) {
-		//auth.userDetailsService(userDetailsService);
 		
 		List<UserDetails> userDetails = new ArrayList<>();
 		

@@ -5,7 +5,7 @@
 	</div>
 	<ul class="menu">
 		<li><a th:href="@{/students}" th:classappend="${requestUri == '/students' ? 'active' : ''}">List all students</a></li>
-		<li><a th:href="@{/students/add}" sec:authorize="hasRole('ROLE_ADMIN')">Add new student</a></li>
+		<li sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/students/add}" th:classappend="${requestUri == '/students/add' ? 'active' : ''}">Add new student</a></li>
 	</ul>
 </header>
 
