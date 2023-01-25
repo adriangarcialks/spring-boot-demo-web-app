@@ -29,7 +29,7 @@ public class StudentController {
 
 	@GetMapping("/students")
 	public String getStudents(Model model, HttpServletRequest request) {
-		model.addAttribute("students", studentService.GetStudents());
+		model.addAttribute("students", studentService.getStudents());
 		
 		String requestUri = request.getRequestURI();
 		model.addAttribute("requestUri", requestUri);
