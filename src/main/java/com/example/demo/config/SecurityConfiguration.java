@@ -20,6 +20,10 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfiguration {
 	
+	private final String USER_ROLE = "USER";
+	private final String ADMIN_ROLE = "ADMIN";
+	private final String PASSWORD = "LKS.2023";
+	
 	// AUTHENTICATION
 	@Bean
 	@Autowired
@@ -28,16 +32,16 @@ public class SecurityConfiguration {
 		List<UserDetails> userDetails = new ArrayList<>();
 		
 		List<GrantedAuthority> userRoles = new ArrayList<>();
-		userRoles.add(new SimpleGrantedAuthority("USER"));
+		userRoles.add(new SimpleGrantedAuthority(USER_ROLE));
 
 		List<GrantedAuthority> adminRoles = new ArrayList<>();
-		adminRoles.add(new SimpleGrantedAuthority("ADMIN"));
+		adminRoles.add(new SimpleGrantedAuthority(ADMIN_ROLE));
 		
 		userDetails.add(new User("user",
-				encoder.encode("LKS.2023"),
+				encoder.encode(PASSWORD),
 				userRoles));
 		userDetails.add(new User("admin",
-				encoder.encode("LKS.2023"),
+				encoder.encode(PASSWORD),
 				adminRoles));	
 		
 		return new InMemoryUserDetailsManager(userDetails);
@@ -52,10 +56,10 @@ public class SecurityConfiguration {
 	@Bean
     public SecurityFilterChain configure(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests()
-		.requestMatchers("/students/add/**").hasAuthority("ADMIN")
-		.requestMatchers("/students/update/**").hasAuthority("ADMIN")
-		.requestMatchers("/students/delete/**").hasAuthority("ADMIN")
-		.requestMatchers("/students").hasAnyAuthority("USER","ADMIN")
+		.requestMatchers("/students/add/**").hasAuthority(ADMIN_ROLE)
+		.requestMatchers("/students/update/**").hasAuthority(ADMIN_ROLE)
+		.requestMatchers("/students/delete/**").hasAuthority(ADMIN_ROLE)
+		.requestMatchers("/students").hasAnyAuthority(USER_ROLE, ADMIN_ROLE)
 		.requestMatchers("/").permitAll()
 		.requestMatchers("/css/*").permitAll()
 		.requestMatchers("/logout").permitAll()
