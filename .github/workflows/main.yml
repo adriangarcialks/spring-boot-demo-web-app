@@ -31,7 +31,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       #Run Tests
       - name: Run Tests
-        run:  mvn -Dtest=StudentServiceTest test
+        run:  mvn -B test
   Sonar:
   #Depends on test's job
     needs: tests
